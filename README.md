@@ -23,3 +23,5 @@ npm run test
 #http://54.208.137.224/crm
 #http://52.207.64.27/crm
 #link webserver 1 dan 2
+#vite-loadbalancer-1676340186.us-east-1.elb.amazonaws.com
+#link DNS loadbalancer
