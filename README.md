@@ -1,27 +1,49 @@
-## How to run the project
+# Adsiser
 
-Use node version minimum: v21.6.1
+Dashboard CRM untuk mengelola data klien, dibangun dengan React, TypeScript, dan Ant Design.
 
-Install all the packages using:
+## Fitur
 
-```jsx
-npm install
+- Daftar klien dengan filter dan tab Client, Policy, dan Support
+- Halaman profil klien berisi data pribadi, kondisi finansial saat ini, dan proyeksi finansial
+- Skeleton loading dan penanganan error saat mengambil data
+- Route guard dan logout
+
+## Tech Stack
+
+React 18, TypeScript, Vite, Ant Design, Tailwind CSS, Sass, React Query, React Router, Axios, ESLint, Husky.
+
+## Struktur
+
+Setiap fitur dipisah menjadi lapisan `model`, `repository`, `usecase`, dan `view`.
+
+```
+src/
+├── routes/
+│   ├── CRM/              # daftar klien
+│   └── ClientProfile/    # detail klien
+│       ├── model/        # tipe dan data statis
+│       ├── repository/   # pemanggilan API
+│       ├── usecase/      # custom hooks
+│       └── view/         # komponen UI
+└── shared/               # layout, API client, hooks bersama
 ```
 
-Run the development local server using:
+## Menjalankan
 
-```jsx
+Membutuhkan Node.js 21.6.1 atau lebih baru.
+
+```bash
+npm install
 npm run dev
 ```
 
-Run the testing using:
-```jsx
-npm run test
-```
+| Perintah | Keterangan |
+|---|---|
+| `npm run dev` | Menjalankan development server |
+| `npm run build` | Membuat build produksi |
+| `npm run lint` | Memeriksa kode dengan ESLint |
 
-## Note
-#http://54.208.137.224/crm
-#http://52.207.64.27/crm
-#link webserver 1 dan 2
-#vite-loadbalancer-1676340186.us-east-1.elb.amazonaws.com
-#link DNS loadbalancer
+## Deployment
+
+Konfigurasi untuk Vercel sudah tersedia di `vercel.json` (SPA rewrite).
